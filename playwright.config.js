@@ -24,7 +24,7 @@ timeout: 5*1000, // Set expect timeout to 40 seconds for assertions
 
  reporter: 'html',
   use: {
-    browserName: 'webkit',
+    browserName: 'chromium',
     headless: false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
   
