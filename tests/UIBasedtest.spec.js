@@ -27,7 +27,7 @@ console.log(ItemTitles);
 
 });
 
-test.only('UI controls', async ({page}) => {
+test('UI controls', async ({page}) => {
 // await page.goto("https://rahulshettyacademy.com/");
 // console.log("The extracted title is: "+await page.title());
 // await expect(page).toHaveTitle("Rahul Shetty Academy | QA Automation, Playwright, AI Testing & QA Online Training");
@@ -57,3 +57,28 @@ await expect(material).toHaveAttribute("class", "blinkingText");
 
 
 });
+
+test.only('@child windoe handeling', async({browser}) =>{
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    const username =  page.locator("#username");
+    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    const material = page.locator("a.blinkingText").first();
+    const [newPage] = await Promise.all([
+
+        context.waitForEvent('page'),//listen for  any new page event pending, rejected, fullfilled
+        material.click(),
+
+          ]);
+
+          const text = await newPage.locator("p.im-para").nth(1).textContent();
+         const arraytext = text.split("@");
+        const domain = arraytext[1].split(" ")[0];
+        console.log(domain);
+        await username.fill(domain);
+
+       console.log(await page.locator("#username").inputValue());
+
+
+
+        });
