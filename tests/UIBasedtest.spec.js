@@ -47,6 +47,7 @@ await dropdown.selectOption("consult");
 await page.locator("#okayBtn").click();
 await expect(usertypeRadioBtn.nth(1)).toBeChecked();
 console.log(await usertypeRadioBtn.nth(1).isChecked());
+
 await page.locator("#terms").click();
 await expect(page.locator("#terms")).toBeChecked();
 await page.locator("#terms").uncheck();
@@ -81,4 +82,4 @@ test.only('@child windoe handeling', async({browser}) =>{
 
 
 
-        });
+        });  
