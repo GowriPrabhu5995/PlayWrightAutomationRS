@@ -73,7 +73,17 @@ console.log("Order confirmation message: "+confirmationMessage);
 const Arraytext = confirmationMessage.split("|");
 const orderId = Arraytext[1].trim();
 console.log("Order ID is: "+orderId);
-  
+
+await page.locator("button[routerlink='/dashboard/myorders']").click();
+await page.locator("h1.ng-star-inserted").waitFor();
+const ListofOrderedRecords = await page.locator("tr.ng-star-inserted").allTextContents();
+console.log(ListofOrderedRecords);
+const countofOrdersplaced = ListofOrderedRecords.length;
+console.log("No of orders placed: "+countofOrdersplaced);
+const orderRow = page.locator("tr.ng-star-inserted").filter({ hasText: orderId });
+await expect(orderRow).toHaveCount(1);
+await orderRow.locator("button[class='btn btn-primary']").click();
+ 
 }
 
 else{
