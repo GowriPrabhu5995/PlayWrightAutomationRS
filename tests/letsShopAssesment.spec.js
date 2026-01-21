@@ -81,7 +81,7 @@ console.log(ListofOrderedRecords);
 const countofOrdersplaced = ListofOrderedRecords.length;
 console.log("No of orders placed: "+countofOrdersplaced);
 const orderRow = page.locator("tr.ng-star-inserted").filter({ hasText: orderId });
-await expect(orderRow).toHaveCount(1);
+await expect(orderRow).toHaveCount(1); //to verify only one record is present No duplicates
 await orderRow.locator("button[class='btn btn-primary']").click();
  
 }
