@@ -14,6 +14,7 @@ test("special locator practice", async({browser})=>{
     //await page.getByText("Success! The Form has been submitted successfully!.").shouldBeVisible();
     await page.getByRole("link", {name:"Shop"}).click();
     await page.locator("app-card").filter({hasText: "Samsung Note 8"}).getByText("Add ").click();
+    
 
 
 })
