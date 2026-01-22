@@ -32,11 +32,9 @@ test('Lets shop assesmenty', async ({browser}) =>{
   //}
    await page.locator(".card-body").filter({hasText:Item})
    .getByRole("button",{name:"Add to Cart"}).click();
-await page.waitForLoadState("networkidle");
   await page.locator("//button[@routerlink='/dashboard/cart']/label").waitFor();
 const cartitemscount =await page.locator("//button[@routerlink='/dashboard/cart']/label").textContent();
 console.log("No of items in the cart: "+cartitemscount);
-
 if(cartitemscount>0){
   await page.getByRole("listitem").getByRole("button", {name: "  Cart "}).click();
   await page.locator(".infoWrap").first().waitFor();
@@ -48,17 +46,17 @@ if(cartitemscount>0){
     await page.locator("(//input[@type='text'])[3]").fill("GPK");
     await page.locator("(//input[@type='text'])[4]").fill("rahulshettyacademy");
     await page.getByRole("button",{name:"Apply Coupon"}).last().click();
-    await page.getByText("* Coupon Applied").waitFor();
+    //await page.getByText("* Coupon Applied").waitFor();
     const discountText = await page.getByText("* Coupon Applied");
     await expect(discountText).toBeVisible();
     console.log("Discount text is: "+await discountText.textContent());
     await page.getByPlaceholder("Select Country").pressSequentially("Ind");
-    await page.getByText('India').first().waitFor();
+    //await page.getByText('India').first().waitFor();
     await page.getByText('India').nth(1).click();
     await page.keyboard.press("End");
 //await page.locator(".btnn.action__submit.ng-star-inserted").waitFor();
 await page.locator(".btnn.action__submit.ng-star-inserted").click();
-await page.getByText(" Thankyou for the order. ").waitFor();
+//await page.getByText(" Thankyou for the order. ").waitFor();
 const orderConfirmationText = await page.getByText(" Thankyou for the order. ").textContent();
 await expect(orderConfirmationText).toBe(" Thankyou for the order. ");
 const confirmationMessage = await page.locator("td[align='center']").first().textContent();
@@ -68,7 +66,7 @@ const orderId = Arraytext[1].trim();
 console.log("Order ID is: "+orderId);
 
 await page.getByRole("listitem").getByRole("button",{name:"  ORDERS"}).click();
-await page.getByText("Your Orders").waitFor();
+//await page.getByText("Your Orders").waitFor();
 const ListofOrderedRecords = await page.getByText("Your Orders").allTextContents();
 console.log(ListofOrderedRecords);
 const countofOrdersplaced = ListofOrderedRecords.length;
