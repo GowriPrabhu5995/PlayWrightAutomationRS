@@ -36,3 +36,25 @@ console.log(happysubscribers);
 
 
 })
+
+
+test("Screenshots & Visual comparisons",async({browser})=>{
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    const ElementDisplayed =  page.getByPlaceholder("Hide/Show Example");
+   await expect(ElementDisplayed).toBeVisible();
+   await ElementDisplayed.screenshot({path : "locator_screenshot.png"
+   });
+   await page.getByRole('button', {name: 'Hide'}).click();
+   await page.screenshot({path :  "Screenshot.png"});
+   await expect(ElementDisplayed).toBeHidden();
+})
+
+test.only(" Visual test based on screenshot comparision", async({browser})=>{
+    const context = await browser.newContext();
+    const page = await context.newPage();
+     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+     expect(await page.screenshot()).toMatchSnapshot("RS_clientlandingPage.png");
+})
+
