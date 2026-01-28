@@ -16,6 +16,7 @@ await page.goto("https://rahulshettyacademy.com/client/");
   await email.fill("gowriprabhu.sp@gmail.com");
   await password.fill("Gpk@5995");
   await loginBtn.click();
+  
   await page.waitForLoadState('networkidle');
   await context.storageState({path: 'sessiondetails.json'});
 webContext =await browser.newContext({storageState: "sessiondetails.json"});
