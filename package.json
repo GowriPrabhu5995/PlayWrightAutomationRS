@@ -6,11 +6,11 @@
   "scripts": {},
   "keywords": [],
   "author": "",
-  
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.57.0",
-    "@types/node": "^25.0.9"
+    "@types/node": "^25.0.9",
+    "exceljs": "^4.4.0"
   }
 }
