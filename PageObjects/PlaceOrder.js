@@ -17,7 +17,7 @@ class PlaceOrder{
         
     }
 
-    async fillThePaymentDetailsandPlaceTheOrder(CVV,CardHolderName,Coupon,countryName){
+    async fillThePaymentDetailsandPlaceTheOrder(CVV,CardHolderName,Coupon,CountryName){
         await  this.EnterCVV.fill(CVV);
         await  this.CardName.fill(CardHolderName);
         await  this.ApplyCoupon.fill(Coupon);
@@ -25,8 +25,8 @@ class PlaceOrder{
         const discountText = await this.CouoponAppliedText
         await expect(discountText).toBeVisible();
         console.log("Discount text is: "+await discountText.textContent());
-        await  this.EnterCountry.pressSequentially(countryName);
-        await this.page.getByText(countryName, { exact: true }).click();
+        await  this.EnterCountry.pressSequentially(CountryName);
+        await this.page.getByText(CountryName, { exact: true }).click();
         await  this.page.keyboard.press("End");
         await  this.SubmitButton.click();
     }

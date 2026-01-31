@@ -14,10 +14,10 @@ class LoginPage {
         // console.log("Login page title is: "+loginpageTitle);
     }
 
-   async Login(username,pwd)
+   async Login(emailid,password)
    {
-    await this.email.fill(username);
-    await this.password.fill(pwd);
+    await this.email.fill(emailid);
+    await this.password.fill(password);
     await this.loginBtn.click();
     await this.page.waitForLoadState('networkidle');
     }
