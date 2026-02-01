@@ -17,6 +17,7 @@ import { report } from 'node:process';
 //config is an varialbe which holds the configuration details to run the tests
 const config =({
   testDir: './tests',
+  retries : 1,
  timeout: 40*1000,  // Set default timeout to 40 seconds for each test execution 
  expect: {
 timeout: 5*1000, // Set expect timeout to 40 seconds for assertions
