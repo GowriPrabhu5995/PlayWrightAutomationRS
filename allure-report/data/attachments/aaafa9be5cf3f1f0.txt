@@ -1,0 +1,8 @@
+[
+  'Automation 8',
+  'Automation 8',
+  'ADIDAS ORIGINAL',
+  'ZARA COAT 3',
+  'iphone 13 pro'
+]
+No of items in the cart: 1

@@ -1,4 +1,5 @@
-{
+[
+    {
     "emailId" : "gowriprabhu.sp@gmail.com",
     "password": "Gpk@5995",
     "Item"    : "ADIDAS ORIGINAL",
@@ -7,5 +8,19 @@
     "cardHolderName" : "GPK",
     "coupon" : "rahulshettyacademy"
 
+},
 
-} 
+    {
+    "emailId" : "rahulshetty@gmail.com",
+    "password": "Iamking@00",
+    "Item"    : "ZARA COAT 3",
+    "CountryName"  : "India",
+    "CVV"     : "123",
+    "cardHolderName" : "GPK",
+    "coupon" : "rahulshettyacademy"
+
+
+}
+
+
+]
