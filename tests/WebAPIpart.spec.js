@@ -1,5 +1,5 @@
 const { create } = require('node:domain');
- const {APIutils} = require('./utils/APIutils');
+ const {APIutils} = require('../utils/APIutils');
 const {test,expect,request} = require('playwright/test');
  const loginPayload = {userEmail: "gowriprabhu.sp@gmail.com", userPassword: "Gpk@5995"};
 const createOrderPayload ={orders: [{country: "India", productOrderedId: "6960eae1c941646b7a8b3ed3"}]};

@@ -1,5 +1,5 @@
 const {test, expect} =require('@playwright/test');
-
+test.describe.configure({mode : 'parallel'});
 test('BrowserContext playwright test', async ({browser}) => {
 
 const context = await browser.newContext();
@@ -59,7 +59,7 @@ await expect(material).toHaveAttribute("class", "blinkingText");
 
 });
 
-test.only('@child windoe handeling', async({browser}) =>{
+test('@child windoe handeling', async({browser}) =>{
     const context = await browser.newContext();
     const page = await context.newPage();
     const username =  page.locator("#username");

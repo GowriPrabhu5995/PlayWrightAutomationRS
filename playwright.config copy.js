@@ -14,6 +14,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
+  
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -37,17 +38,37 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], 
+         headless : false,
+         screenshot :'on',
+        // trace : 'on',
+         video : "retain-on-failure",
+         ignoreHTTPSErrors : true,
+        // permissions : ['Geolocation'],
+         viewport : {width : 720,height: 720}
+      },
+     
+
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],
+        headless : false,
+         screenshot :'on',
+        // trace : 'on',
+        // viewport : {width : 720,height: 720}
+       },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'],
+        headless : false,
+         screenshot :'on',
+        // trace : 'on',
+        // viewport : {width : 720,height: 720}
+       },
     },
 
     /* Test against mobile viewports. */
