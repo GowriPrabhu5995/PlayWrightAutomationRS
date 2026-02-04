@@ -1,6 +1,6 @@
 const {test,expect} =require('playwright/test');
 
-test("calender functionality logic", async({browser})=>{
+test("@WEB calender functionality logic", async({browser})=>{
 
     const context = await browser.newContext();
     const page = await context.newPage();

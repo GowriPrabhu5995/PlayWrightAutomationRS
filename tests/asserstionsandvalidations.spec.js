@@ -1,6 +1,6 @@
 const {test,expect} =require("playwright/test")
 
-test("Assertions and validations",async({browser})=>{
+test("@WEB Assertions and validations",async({browser})=>{
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -38,7 +38,7 @@ console.log(happysubscribers);
 })
 
 
-test("Screenshots & Visual comparisons",async({browser})=>{
+test("@WEB Screenshots & Visual comparisons",async({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
@@ -51,7 +51,7 @@ test("Screenshots & Visual comparisons",async({browser})=>{
    await expect(ElementDisplayed).toBeHidden();
 })
 
-test.only(" Visual test based on screenshot comparision", async({browser})=>{
+test("@WEB Visual test based on screenshot comparision", async({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();
      await page.goto("https://rahulshettyacademy.com/AutomationPractice/");

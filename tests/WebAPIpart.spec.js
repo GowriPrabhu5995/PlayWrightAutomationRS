@@ -13,7 +13,7 @@ test.beforeAll( async()=>{
   
 });
 
-test('Lets shop assesmenty', async ({browser}) =>{
+test('@API  Lets shop assesmenty', async ({browser}) =>{
 
   const context = await browser.newContext();
   const page = await context.newPage();

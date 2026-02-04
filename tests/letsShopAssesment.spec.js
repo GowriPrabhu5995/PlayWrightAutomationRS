@@ -1,6 +1,6 @@
 const {test,expect} =require('@playwright/test');
 
-test('Lets shop assesmenty', async ({browser}) =>{
+test('@WEB Lets shop assesmenty', async ({browser}) =>{
 
   const Item = "ADIDAS ORIGINAL";
   const country =  ' India';
