@@ -5,7 +5,7 @@ const {PageObjectManager} = require('../PageObjects/PageObjectManager');
 const dataset = JSON.parse(JSON.stringify(require("../utils/OrderplacementTestData.json")));
 
 for(const data of dataset){
-test(`Lets shop assesmenty ${data.Item}`, async ({browser}) =>{
+test(`@WEB Lets shop assesmenty ${data.Item}`, async ({browser}) =>{
 const context = await browser.newContext();
 const page = await context.newPage();
 const pageObjectManager =new PageObjectManager(page);
@@ -42,7 +42,7 @@ else{
 });
 }
 
- customtest.only("Lets shop assesmenty", async ({browser,TestDataForOrderCreation}) =>{
+ customtest("@WEB  Lets shop assesmenty", async ({browser,TestDataForOrderCreation}) =>{
 const context = await browser.newContext();
 const page = await context.newPage();
 const pageObjectManager =new PageObjectManager(page);

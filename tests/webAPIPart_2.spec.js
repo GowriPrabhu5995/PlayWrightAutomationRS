@@ -22,7 +22,7 @@ await page.goto("https://rahulshettyacademy.com/client/");
 webContext =await browser.newContext({storageState: "sessiondetails.json"});
 })
 
-test("Client App login", async()=>{
+test(" @API Client App login", async()=>{
 
     const page = await webContext.newPage();
     const productnames = page.locator(".card-body b");
